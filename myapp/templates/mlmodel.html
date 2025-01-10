@@ -1,0 +1,508 @@
+{% extends "rest_framework/base.html" %}
+
+{% load static %}   
+
+
+
+    {% block bootstrap_theme %}
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}" type="text/css">
+    <style>
+h1 {text-align: center;}
+p {text-align: center;}
+table {
+  width: 100%;
+}
+
+    </style>       
+    
+
+    {% endblock %}
+    
+    
+
+    
+
+    {% block content %}
+    <body  style="background-color: aqua;">
+    
+    
+
+    <h1>Credit Card Fraud Detection</h1>
+    <script src="{% static 'myapp/js/jquery.js' %}"></script>
+    <script src="{% static 'myapp/js/popper.js' %}"></script>
+    <script src="{% static 'myapp/js/bootstrap.js' %}"></script>
+
+    <p>Check the list of Users  :<a href="{{users}}">{{users}}  </a></p>  
+    <p>Check the list of Model instances  :<a href="{{mlmodels}}">{{mlmodels}}   </a>  </p>
+        
+<br>
+
+    <form method="post" style="text-align: center;">
+        {% csrf_token %}
+        
+    <div style="text-align: center;">
+
+        <table style="background-color: green; border: brown; text-align: center;">  
+        <tr> <td> <p>API Route</td>              </p>      <td>  <p> :<a href='\'>         API route to serve Base Models</a> </p></td></tr>
+        <tr> <td><p>Model Input Form</td>            </p>   <td> <p> :<a href="\form">     Model Input form</a> </p></td></tr>
+        <tr> <td> <p>Predict on the Input Data</td>    </p> <td>  <p>:<a href="\predict">  Predict on Last Input Model Form data</a> </p></td></tr>
+        <tr> <td><p>Train the Model for Accuracy</td>   </p> <td> <p>:<a href="\train">    Train the Model </a> </p></td> </tr>
+    </table>
+  </div>
+        {{data}}           
+        <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            <th><label for="id_Time">Time:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="Time" value=" " required id="id_Time" >
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V1">V1:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V1" value="0.0000000000000000" step="1e-16" required id="id_V1">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V2">V2:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V2" value="0.0000000000000000" step="1e-16" required id="id_V2">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V3">V3:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V3" value="0.0000000000000000" step="1e-16" required id="id_V3">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V4">V4:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V4" value="0.0000000000000000" step="1e-16" required id="id_V4">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V5">V5:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V5" value="0.0000000000000000" step="1e-16" required id="id_V5">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V6">V6:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V6" value="0.0000000000000000" step="1e-16" required id="id_V6">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V7">V7:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V7" value="0.0000000000000000" step="1e-16" required id="id_V7">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V8">V8:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V8" value="0.0000000000000000" step="1e-16" required id="id_V8">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V9">V9:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V9" value="0.0000000000000000" step="1e-16" required id="id_V9">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V10">V10:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V10" value="0.0000000000000000" step="1e-16" required id="id_V10">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V11">V11:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V11" value="0.0000000000000000" step="1e-16" required id="id_V11">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V12">V12:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V12" value="0.0000000000000000" step="1e-16" required id="id_V12">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V13">V13:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V13" value="0.0000000000000000" step="1e-16" required id="id_V13">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V14">V14:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V14" value="0.0000000000000000" step="1e-16" required id="id_V14">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V15">V15:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V15" value="0.0000000000000000" step="1e-16" required id="id_V15">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V16">V16:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V16" value="0.0000000000000000" step="1e-16" required id="id_V16">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V17">V17:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V17" value="0.0000000000000000" step="1e-16" required id="id_V17">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V18">V18:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V18" value="0.0000000000000000" step="1e-16" required id="id_V18">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V19">V19:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V19" value="0.0000000000000000" step="1e-16" required id="id_V19">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V20">V20:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V20" value="0.0000000000000000" step="1e-16" required id="id_V20">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V21">V21:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V21" value="0.0000000000000000" step="1e-16" required id="id_V21">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V22">V22:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V22" value="0.0000000000000000" step="1e-16" required id="id_V22">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V23">V23:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V23" value="0.0000000000000000" step="1e-16" required id="id_V23">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V24">V24:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V24" value="0.0000000000000000" step="1e-16" required id="id_V24">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V25">V25:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V25" value="0.0000000000000000" step="1e-16" required id="id_V25">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V26">V26:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V26" value="0.0000000000000000" step="1e-16" required id="id_V26">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_V27">V27:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V27" value="0.0000000000000000" step="1e-16" required id="id_V27">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            
+            <br>
+            <b> Please enter the Value of </b> 
+            <th><label for="id_V28">V28:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="V28" value="0.0000000000000000" step="1e-16" required id="id_V28">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_Amount">Amount:</label></th>
+            <br>
+            <td>
+        
+              <input type="number" name="Amount" value="0" required id="id_Amount">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <br>
+            <b> Please enter the Value of </b> 
+            
+            <th><label for="id_owner">Owner:</label></th>
+            <br>
+            <td>
+        
+              <select name="owner" required id="id_owner">
+          <option value="">---------</option>
+        
+          <option value="1" selected>admin</option>
+        
+        </select>
+        
+        
+        
+        
+            </td>
+          </tr>
+        
+        <br>
+        <br> 
+        <button type="submit" name="submit">Submit</button>
+        <br>
+         </form> 
+   
+
+  
+    
+
+
+</body>
+{% endblock %}
+</html>
+
+

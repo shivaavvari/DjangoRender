@@ -1,0 +1,46 @@
+{% extends "rest_framework/base.html" %}
+
+{% load static %}   
+
+
+
+    {% block bootstrap_theme %}
+
+    
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}" type="text/css">
+    <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        
+        
+            </style>       
+            
+           
+
+    {% endblock %}
+
+
+
+    {% block content %}
+    <body  style="background-color: aqua;text-align: center;">
+    
+    
+
+
+    <h1>Credit Card Fraud Detection</h1>
+    <script src="{% static 'myapp/js/jquery.js' %}"></script>
+    <script src="{% static 'myapp/js/popper.js' %}"></script>
+    <script src="{% static 'myapp/js/bootstrap.js' %}"></script>
+
+<textarea  style="width:321px; height:890px;background-color: aqua;text-align: center; ">
+
+{{users}}
+
+{{models}}
+
+
+</textarea>
+
+</body>
+{% endblock %}
+</html>

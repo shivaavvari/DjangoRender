@@ -1,0 +1,76 @@
+
+{% extends "rest_framework/base.html" %}
+{% load static %}   
+
+      
+      
+
+    {% block bootstrap_theme %}
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}" type="text/css">
+    <style>
+      h1 {text-align: center;}
+      p {text-align: center;}
+      
+      table {
+  width: 100%;
+}      
+          </style>       
+          
+      
+  </head>       
+    {% endblock %}
+    
+  
+
+    {% block content %}
+    
+    <body style="background-color:aqua;text-align: center;">
+  
+    <h1>Credit Card Fraud Detection</h1>
+    <p>Please select if you want to train the model </p>
+    <script src="{% static 'myapp/js/jquery.js' %}"></script>
+    <script src="{% static 'myapp/js/popper.js' %}"></script>
+    <script src="{% static 'myapp/js/bootstrap.js' %}"></script>
+    
+    
+  <div  style="text-align: center;">  
+    <table style="background-color: green; border: brown;text-align: center;">  
+      <tr> <td> <p>API Route</td>              </p>      <td>  <p> :<a href='\'>         API route to serve Base Models</a> </p></td></tr>
+      <tr> <td><p>Model Input Form</td>            </p>   <td> <p> :<a href="\form">     Model Input form</a> </p></td></tr>
+      <tr> <td> <p>Predict on the Input Data</td>    </p> <td>  <p>:<a href="\predict">  Predict on Last Input Model Form data</a> </p></td></tr>
+      <tr> <td><p>Train the Model for Accuracy</td>   </p> <td> <p>:<a href="\train">    Train the Model </a> </p></td> </tr>
+  </table>
+</div>
+
+  <br/>
+  <br/>
+
+    <textarea style="height: 321px; width: 890px; background-color: beige;text-align: center;">
+    
+     The results of classification report is : 
+     {{classificationreport}} 
+     The results of F1- score is :{{f1score}} 
+     The results of Precision score : {{precisionscore}} 
+     The results of Recall Score: {{ recallscore }} 
+     The results accuracy Score is: {{ accuracyscore }}
+  
+  
+    </textarea>
+
+    <form method="post" style="text-align: center;">
+      {% csrf_token %}
+        
+    {{  data  }} <br>
+
+
+
+    <button type="submit" style="text-align: center;">Train </button>
+  </form>
+
+    {% endblock %}  
+    
+
+

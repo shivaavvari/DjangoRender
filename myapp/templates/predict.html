@@ -1,0 +1,56 @@
+{% extends "rest_framework/base.html" %}
+{% load static %}   
+      
+
+{% block bootstrap_theme %}
+<link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}" type="text/css">
+<style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    
+    table {
+  width: 100%;
+}    
+        </style>       
+        
+           
+{% endblock %}
+    
+
+
+{% block content %}
+
+<body style="background-color: aqua;text-align: center;">
+<h1>Credit Card Fraud Detection</h1>
+<p>The results of predictions </p>
+<script src="{% static 'myapp/js/jquery.js' %}"></script>
+<script src="{% static 'myapp/js/popper.js' %}"></script>
+<script src="{% static 'myapp/js/bootstrap.js' %}"></script>
+
+<p>Check the list of Users  :<a href="{{users}}">{{users}}  </a></p>  
+<p>Check the list of Model instances  :<a href="{{mlmodels}}">{{mlmodels}}   </a>  </p>
+
+
+
+<div style="text-align: center;">
+<table style="background-color:green; border: brown;text-align: center;">  
+    <tr> <td> <p>API Route</td>              </p>      <td>  <p> :<a href='\'>         API route to serve Base Models</a> </p></td></tr>
+    <tr> <td><p>Model Input Form</td>            </p>   <td> <p> :<a href="\form">     Model Input form</a> </p></td></tr>
+    <tr> <td> <p>Predict on the Input Data</td>    </p> <td>  <p>:<a href="\predict">  Predict on Last Input Model Form data</a> </p></td></tr>
+    <tr> <td><p>Train the Model for Accuracy</td>   </p> <td> <p>:<a href="\train">    Train the Model </a> </p></td> </tr>
+</table>
+</div>
+<br/>
+<br/>
+
+<textarea style="height: 321px; width:890px; background-color: beige;text-align: center;">
+The results of Predictions according to the Classifier model
+1 - The classifier has predicted a Fraud Transaction
+0 - The classifer has Predicted a Non Fraud Transaction
+
+The results of the Fraud Prediction  is     {{data}}
+</textarea>
+</body>
+
+{% endblock %}  
+    
